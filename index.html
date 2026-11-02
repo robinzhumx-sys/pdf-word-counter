@@ -133,7 +133,7 @@
       </div>
 
       <div class="item">
-        <div class="label">英文單字</div>
+        <div class="label">英文／數字單字</div>
         <div class="number" id="englishWords">-</div>
       </div>
 
@@ -164,8 +164,8 @@
       // 中、日、韓文字元
       const cjk = (text.match(/[\u3400-\u9FFF\uF900-\uFAFF\u3040-\u30FF\uAC00-\uD7AF]/g) || []).length;
 
-      // 英文單字：例如 hello、don't、PDF-file
-      const english = (text.match(/[A-Za-z]+(?:['-][A-Za-z]+)*/g) || []).length;
+      // 英文／數字單字：例如 hello、don't、PDF-file
+      const english = (text.match(/[A-Za-z0-9]+(?:['’-][A-Za-z0-9]+)*/g) || []).length;
 
       // 所有非空白字元
       const allChars = (text.match(/\S/g) || []).length;
